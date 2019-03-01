@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Document</title>
+    <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+  </head>
+  <body>
+    <button>Search</button>
+    <script type="text/javascript">
+      $("button").on("click", function() {
+        var country = "US";
+        var currency = "USD";
+        var locale = "en-US";
+        var originPlace = "SFO-sky";
+        var destinationPlace = "LHR-sky";
+        var outboundPartialDate = "2019-10-01"; //YYYY-MM-DD
+        var inboundPartialDate = "2019-11-10";
+        var queryURL =
+          "https://partners.api.skyscanner.net/apiservices/referral/v1.0/" +
+          country +
+          "/" +
+          currency +
+          "/" +
+          locale +
+          "/" +
+          originPlace +
+          "/" +
+          destinationPlace +
+          "/" +
+          outboundPartialDate +
+          "/" +
+          inboundPartialDate +
+          "?api_key=32546dec3amsh296808ab8e0c6f4p1dd857jsn160dd89c68ad";
+        $.ajax({
+          url: queryURL,
+          method: "POST",
+          dataType: "application/json"
+        });
+        // need to parse JSON result:
+
+        //
+
+        console.log(location);
+        console.log(queryURL);
+
+        //  var sessionURL = "http://partners.api.skyscanner.net/apiservices/pricing/uk1/v1.0/" + sessionID
+        // var sessionID = ???;
+        //first call = session ID
+        //session token header
+        //search parameters
+      });
+    </script>
+  </body>
+</html>
